@@ -1,0 +1,19 @@
+{
+    "window.zoomLevel": 3,
+
+    "editor.guides.highlightActiveIndentation": true,
+
+    // "html.format.maxPreserveNewLines": 250,
+    // "html.format.wrapLineLength": 250,
+    // "prettier.printWidth": 250,
+    "editor.formatOnSaveMode": "modifications",
+    "editor.formatOnSave": false,
+    "html.format.maxPreserveNewLines": 300,
+    "css.format.maxPreserveNewLines": 300,
+    "less.format.maxPreserveNewLines": 300,
+    "scss.format.maxPreserveNewLines": 300,
+    "editor.wordWrapColumn": 250,
+    "html.format.wrapLineLength": 0,
+    "prettier.tabWidth": 4,
+    "editor.tabSize": 4
+}
