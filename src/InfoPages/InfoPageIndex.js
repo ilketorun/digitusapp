@@ -6,20 +6,25 @@ import SecondContent from './Contents/SecondContent';
 import ThirdContent from './Contents/ThirdContent';
 import { SwiperStyles } from '../../assets/css/InfoPages';
 import Swiper from 'react-native-swiper';
+import {View} from 'react-native'
 
 
 const InfoPageIndex = (props) => {
-    const [index, setIndex] = React.useState(0)
-
-    React.useEffect(() => {
-        setIndex(props.index);
-    }, [props.index]);
+    const swiper = React.useRef(null);
 
     return (
-        <Swiper style={SwiperStyles.wrapper} showsButtons={false}>
-            <FirstContent />
-            <SecondContent />
-            <ThirdContent />
+        <Swiper
+            ref={swiper}
+            style={SwiperStyles.wrapper}
+            containerStyle={SwiperStyles.containerStyle}
+            showsButtons={false}
+            dot={<View style={{backgroundColor:'#EAECF3', width: 9, height: 9, borderRadius: 5, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3}} />}
+            activeDot={<View style={{backgroundColor: '#B5B0B5', width: 8, height: 8, borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3}} />}
+            onIndexChanged={props.onIndexChanged}
+        >
+            <FirstContent ref={swiper}/>
+            <SecondContent ref={swiper}/>
+            <ThirdContent ref={swiper}/>
         </Swiper>
     )
 };

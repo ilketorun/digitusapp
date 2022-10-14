@@ -15,47 +15,16 @@ import { createStackNavigator } from '@react-navigation/stack';
 import InfoPageIndex from './InfoPageIndex';
 import DigitusLogo from '../../assets/images/DigitusLogo.png';
 import {styles} from '../../assets/css/InfoPages';
-import CustomButton from '../Common/CustomButton';
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
 * LTI update could not be added via codemod */
 
 const InfoPages = () => {
-    const [buttonText,setButtonText] = useState('ileri');
-    const [index, setIndex] = React.useState(0);
-
-    console.log('index',index);
-
-    const onButtonPress = () => {
-        if (index !== 2) {
-            setIndex(forcedIndex => forcedIndex + 1);
-        } else if (index === 2) {
-
-        }
-    };
-
-    React.useEffect(() => {
-        if (index === 2) {
-            setButtonText('Giriş');
-        }
-        else {
-            if (buttonText !== 'ileri') {
-                setButtonText('ileri');
-            }
-        }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [index]);
 
     return (
         <View style={styles.infoPagesWrapper}>
             <Image source={DigitusLogo} style={styles.logoStyle}/>
-            <InfoPageIndex setIndex={setIndex}  index={index}/>
-            <CustomButton
-                onPress={onButtonPress}
-                text={buttonText}
-                textStyle={styles.buttonTextStyle}
-                buttonStyle={styles.buttonStyle}
-            />
+            <InfoPageIndex />
         </View>
     );
 };

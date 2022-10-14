@@ -39,7 +39,7 @@ export const styles = StyleSheet.create({
         alignSelf: 'center',
     },
     buttonStyle: {
-        marginBottom: 35,
+        marginTop: 35,
         color: 'black',
         backgroundColor: '#64B48E',
         alignSelf: 'center',
@@ -68,64 +68,31 @@ export const styles = StyleSheet.create({
     },
 });
 
-export const SwipeBarStyles = StyleSheet.create({
-    wrapper: {
-        width: 41,
-        height: 9,
-        backgroundColor: 'black',
-        alignSelf: 'center',
-        display: 'flex',
-        alignContent: 'space-around',
-    },
-    reactangles: {
-        marginLeft: 2,
-        height: 9,
-        width: 9,
-        borderRadius:1,
-        backgroundColor: 'green',
-        zIndex: 1,
-    },
-    reactangle1: {
-        marginLeft: 5,
-        height: 9,
-        width: 9,
-        borderRadius:1,
-        backgroundColor: 'blue',
-        zIndex: 1,
-    },
-    reactangle2: {
-        height: 9,
-        width: 9,
-        borderRadius:1,
-        backgroundColor: 'purple',
-        zIndex: 1,
-    },
-});
-
 export const SwiperStyles = StyleSheet.create({
     wrapper: {},
+    containerStyle:{},
     slide1: {
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#9DD6EB'
+      backgroundColor: '#9DD6EB',
     },
     slide2: {
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#97CAE5'
+      backgroundColor: '#97CAE5',
     },
     slide3: {
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#92BBD9'
+      backgroundColor: '#92BBD9',
     },
     text: {
       color: '#fff',
       fontSize: 30,
-      fontWeight: 'bold'
+      fontWeight: 'bold',
     }
   })
 
