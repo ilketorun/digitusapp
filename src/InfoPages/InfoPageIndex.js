@@ -1,42 +1,34 @@
+/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
 import * as React from 'react';
-import { useWindowDimensions, StyleSheet } from 'react-native';
-import { TabView } from 'react-native-tab-view';
-import FirstContent from './FirstContent';
-import SecondContent from './SecondContent';
-import ThirdContent from './ThirdContent';
+import FirstContent from './Contents/FirstContent';
+import SecondContent from './Contents/SecondContent';
+import ThirdContent from './Contents/ThirdContent';
+import { SwiperStyles } from '../../assets/css/InfoPages';
+import Swiper from 'react-native-swiper';
 
-const renderScene = ({ route, jumpTo }) => {
-    switch (route.key) {
-        case 'first':
-            return <FirstContent jumpTo={jumpTo} />;
-        case 'second':
-            return <SecondContent jumpTo={jumpTo} />;
-        case 'third':
-            return <ThirdContent jumpTo={jumpTo} />;
-    }
-};
 
-const InfoPageIndex = () => {
-    const layout = useWindowDimensions();
+const InfoPageIndex = (props) => {
+    const [index, setIndex] = React.useState(0)
 
-    const [index, setIndex] = React.useState(0);
-    const [routes] = React.useState([
-        { key: 'first', title: 'First' },
-        { key: 'second', title: 'Second' },
-        { key: 'third', title: 'Third' },
-    ]);
+    React.useEffect(() => {
+        setIndex(props.index);
+    }, [props.index]);
 
     return (
-        <TabView
-            navigationState={{ index, routes }}
-            renderScene={renderScene}
-            onIndexChange={setIndex}
-            initialLayout={{ width: layout.width }}
-            tabBarPosition={'bottom'}
-        />
-    );
+        <Swiper style={SwiperStyles.wrapper} showsButtons={false}>
+            <FirstContent />
+            <SecondContent />
+            <ThirdContent />
+        </Swiper>
+    )
 };
 
+
 export default InfoPageIndex;
+
+
+
+
+
 
