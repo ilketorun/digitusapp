@@ -28,6 +28,7 @@ export const styles = StyleSheet.create({
     },
     infoPagesWrapper:{
         flex: 1,
+        backgroundColor: 'white',
     },
     textStyle: {
         marginBottom: 60,
