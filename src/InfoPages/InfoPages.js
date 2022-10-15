@@ -8,7 +8,7 @@ import { styles } from '../../assets/css/InfoPages';
 const InfoPages = () => {
     return (
         <View style={styles.infoPagesWrapper}>
-            <Image source={DigitusLogo} style={styles.logoStyle}/>
+            <Image source={DigitusLogo} style={styles.logoStyle} />
             <InfoPageIndex />
         </View>
     );

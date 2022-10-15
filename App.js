@@ -51,9 +51,8 @@ function MyStack() {
                     headerTitle: (props) => <LogoTitle {...props} />,
                     headerRight: (props) => <CustumNavigationButton {...props} imageSource={ProfileButton} onPress={onPressProfileButton} />,
                     headerLeft: (props) => <CustumNavigationButton {...props} imageSource={SearchIcon} onPress={onPressSeachIcon} />,
-                    headerStyle: { height: 80 },
+                    headerStyle: { height: 80, shadowColor: '#707070', shadowOpacity: 0.3,  shadowOffset: { height: 0 }, shadowRadius: 3 },
                 }}
-
             />
             <Stack.Screen
                 name="DetailsPage"
@@ -61,7 +60,7 @@ function MyStack() {
                 options={{
                     headerTitle: (props) => <LogoTitle {...props} />,
                     headerLeft: (props) => <CustumNavigationButton {...props} imageSource={BackButton} onPress={onPressBackButton} />,
-                    headerStyle: { height: 80 },
+                    headerStyle: { height: 80, shadowColor: '#707070', shadowOpacity: 0.3,  shadowOffset: { height: 0 }, shadowRadius: 3},
                 }}
             />
         </Stack.Navigator>
