@@ -15,8 +15,41 @@ export const stories = StyleSheet.create({
         height: 107,
         backgroundColor: 'white',
     },
-    text: {
-        fontSize: 42,
+});
+
+export const singleStory = StyleSheet.create({
+    container: {
+        height: 87,
+        width: 53,
+        marginLeft: 12,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    storyBorder: {
+        marginTop: 30,
+        height: 54,
+        width: 54,
+        borderWidth: 1,
+        borderColor: '#999EB9',
+        borderRadius: 54,
+        justifyContent:'center',
+        alignItems: 'center',
+    },
+    storyImage: {
+        width: 47,
+        height: 47 ,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    storyText: { 
+        fontSize:11,
+        fontFamily: 'Avenir Next',
+        lineHeight: 13,
+        color:'#999EB9',
+         width: 50,
+         height: 34,
+         textAlign: 'center',
+         marginTop: 5,
     },
 });
 
