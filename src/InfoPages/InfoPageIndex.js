@@ -8,7 +8,6 @@ import { SwiperStyles } from '../../assets/css/InfoPages';
 import Swiper from 'react-native-swiper';
 import {View} from 'react-native'
 
-
 const InfoPageIndex = (props) => {
     const swiper = React.useRef(null);
 
@@ -28,7 +27,6 @@ const InfoPageIndex = (props) => {
         </Swiper>
     )
 };
-
 
 export default InfoPageIndex;
 
