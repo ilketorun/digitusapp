@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import {View, Text, Image, useWindowDimensions} from 'react-native';
-import FirstPageImage from '../../../assets/images/FirstPageImage.png';
+import FirstPageImage from '../../../assets/images/InfoPageImages/FirstPageImage.png';
 import {styles} from '../../../assets/css/InfoPages';
 import CustomButton from '../../Common/CustomButton';
 

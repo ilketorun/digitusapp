@@ -1,11 +1,10 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import {View, Text, Image, useWindowDimensions} from 'react-native';
-import ThirdPageImage from '../../../assets/images/ThirdPageImage.png';
+import ThirdPageImage from '../../../assets/images/InfoPageImages/ThirdPageImage.png';
 import {styles} from '../../../assets/css/InfoPages';
 import CustomButton from '../../Common/CustomButton';
 import { useNavigation } from '@react-navigation/native';
-
 
 const ThirdContent = React.forwardRef((props, ref) => {
     const layout = useWindowDimensions();
@@ -33,16 +32,3 @@ const ThirdContent = React.forwardRef((props, ref) => {
 });
 
 export default ThirdContent;
-
-
-// function NotificationsScreen({ navigation }) {
-//     return (
-//         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-//             <Button
-//             title="Go to Settings"
-//             onPress={() => navigation.navigate('Settings')}
-//             />
-//             <Button title="Go back" onPress={() => navigation.goBack()} />
-//         </View>
-//     );
-// }

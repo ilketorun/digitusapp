@@ -7,7 +7,7 @@ const CustomButton = (props) => {
         <TouchableOpacity style={props.buttonStyle} onPress={props.onPress} >
             <Text style={props.textStyle}>{props.text}</Text>
         </TouchableOpacity>
-    )
-}
+    );
+};
 
 export default CustomButton;

@@ -25,7 +25,7 @@ const InfoPageIndex = (props) => {
             <SecondContent ref={swiper}/>
             <ThirdContent ref={swiper}/>
         </Swiper>
-    )
+    );
 };
 
 export default InfoPageIndex;

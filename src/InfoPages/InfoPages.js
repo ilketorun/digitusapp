@@ -2,7 +2,7 @@
 import React from 'react';
 import { View, Image } from 'react-native';
 import InfoPageIndex from './InfoPageIndex';
-import DigitusLogo from '../../assets/images/DigitusLogo.png';
+import DigitusLogo from '../../assets/images/InfoPageImages/DigitusLogo.png';
 import { styles } from '../../assets/css/InfoPages';
 
 const InfoPages = () => {
