@@ -11,7 +11,11 @@ const SinglePost = (props) => {
     const navigation = useNavigation();
 
     const onButtonPress = () => {
-        navigation.navigate('DetailsPage');
+        navigation.navigate('DetailsPage', {
+            title: props.title,
+            detailsPageImage: props.detailsPageImage,
+            detailsPageText: props.detailsPageText,
+          });
     };
 
     return (
