@@ -3,10 +3,11 @@ import { StyleSheet } from 'react-native'
 
 export const index = StyleSheet.create({
     wrapper: {
-        flex: 1,
         backgroundColor: 'white',
     },
-    image: {},
+    image: {
+        width: '100%' ,
+    },
     detailsBottom: {
         width: '100%',
         marginTop: -18,

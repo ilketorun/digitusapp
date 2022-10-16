@@ -7,7 +7,6 @@ import MainPageIndex from './src/MainPage/MainPageIndex';
 import DetailsPageIndex from './src/DetailsPage/DetailsPageIndex';
 import CustumNavigationButton from './src/Common/CustomNavButton';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import BackButton from './assets/images/DetailPageImages/NavBarLeftButton.png';
 import ProfileButton from './assets/images/MainPageImages/RightButton.png';
@@ -26,10 +25,11 @@ import BellIconActive from './assets/images/TabBarIcons/bell.png';
 import BellIconPassive from './assets/images/TabBarIcons/bell_passive.png';
 import MenuIconActive from './assets/images/TabBarIcons/menu.png';
 import MenuIconPassive from './assets/images/TabBarIcons/menu_passive.png';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
 
 const Stack = createStackNavigator();
-const Tab = createBottomTabNavigator();
+const Tab = createMaterialBottomTabNavigator();
 
 function InfoStack () {
     return (
@@ -50,66 +50,60 @@ function InfoStack () {
     );
 }
 
-function MainTab () {
-    return (
-        <Tab.Navigator >
-            <Tab.Screen
-                name="Home"
-                component={MainStack}
-                options={() => ({
-                    headerShown: false,
-                    tabBarIcon: ({ focused, color, size }) => {
-                            return (<CustomTabBar focused={focused} icon={!focused ? HomeIconActive : HomeIconPassive} />);
-                    },
-                    tabBarShowLabel: false,
-                })}
-            />
-            <Tab.Screen
-                name="Settings"
-                component={OtherPages}
-                options={() => ({
-                    headerShown: false,
-                    tabBarIcon: ({ focused, color, size }) => {
-                            return (<CustomTabBar focused={focused} icon={!focused ? BookIconActive : BookIconPassive} />);
-                    },
-                    tabBarShowLabel: false,
-                })}
-            />
-            <Tab.Screen
-                name="Settings1"
-                component={OtherPages}
-                options={() => ({
-                    headerShown: false,
-                    tabBarIcon: ({ focused, color, size }) => {
-                            return (<CustomTabBar focused={focused} icon={!focused ? UsersIconActive : UsersIconPassive} />);
-                    },
-                    tabBarShowLabel: false,
-                })}
-            />
-            <Tab.Screen
-                name="Settings2"
-                component={OtherPages}
-                options={() => ({
-                    headerShown: false,
-                    tabBarIcon: ({ focused, color, size }) => {
-                            return (<CustomTabBar focused={focused} icon={!focused ? BellIconActive : BellIconPassive} />);
-                    },
-                    tabBarShowLabel: false,
-                })}
-            />
-            <Tab.Screen
-                name="Settings3"
-                component={OtherPages}
-                options={() => ({
-                    headerShown: false,
-                    tabBarIcon: ({ focused, color, size }) => {
-                            return (<CustomTabBar focused={focused} icon={!focused ? MenuIconActive : MenuIconPassive} />);
-                    },
-                    tabBarShowLabel: false,
-                })}
-            />
-        </Tab.Navigator>
-    );
+function MainTab() {
+  return (
+    <Tab.Navigator
+        initialRouteName="Feed"
+        labeled={false}
+        barStyle={{ backgroundColor: 'white', height: 54, justifyContent: 'center', alignContent: 'center' }}
+    >
+      <Tab.Screen
+        name="Feed"
+        component={MainStack}
+        options={{
+            tabBarIcon: ({ focused, color, size }) => {
+                    return (<CustomTabBar focused={focused} icon={!focused ? HomeIconActive : HomeIconPassive} />);
+            },
+        }}
+      />
+      <Tab.Screen
+        name="Notifications"
+        component={OtherPages}
+        options={{
+            tabBarIcon: ({ focused, color, size }) => {
+                    return (<CustomTabBar focused={focused} icon={!focused ? BookIconActive : BookIconPassive} />);
+            },
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={OtherPages}
+        options={{
+            tabBarIcon: ({ focused, color, size }) => {
+                    return (<CustomTabBar focused={focused} icon={!focused ? UsersIconActive : UsersIconPassive} />);
+            },
+        }}
+      />
+      <Tab.Screen
+        name="Profile2"
+        component={OtherPages}
+        options={{
+            tabBarIcon: ({ focused, color, size }) => {
+                    return (<CustomTabBar focused={focused} icon={!focused ? BellIconActive : BellIconPassive} />);
+            },
+        }}
+      />
+      <Tab.Screen
+        name="Profile3"
+        component={OtherPages}
+        options={{
+            tabBarIcon: ({ focused, color, size }) => {
+                    return (<CustomTabBar focused={focused} icon={!focused ? MenuIconActive : MenuIconPassive} />);
+            },
+        }}
+      />
+    </Tab.Navigator>
+  );
 }
 
 function MainStack() {
@@ -126,7 +120,7 @@ function MainStack() {
     };
 
     return (
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{ headerTitleAlign: 'center' }}>
             <Stack.Screen
                 name="MainPage"
                 component={MainPageIndex}
@@ -134,7 +128,7 @@ function MainStack() {
                     headerTitle: (props) => <LogoTitle {...props} />,
                     headerRight: (props) => <CustumNavigationButton {...props} imageSource={ProfileButton} onPress={onPressProfileButton} />,
                     headerLeft: (props) => <CustumNavigationButton {...props} imageSource={SearchIcon} onPress={onPressSeachIcon} />,
-                    headerStyle: { height: 92, shadowColor: '#707070', shadowOpacity: 0.3,  shadowOffset: { height: 0 }, shadowRadius: 3 },
+                    headerStyle: { height: 92,shadowColor: '#707070', shadowOpacity: 0.3,  shadowOffset: { height: 0 }, shadowRadius: 3 },
                 }}
             />
             <Stack.Screen

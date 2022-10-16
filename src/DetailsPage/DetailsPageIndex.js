@@ -15,7 +15,7 @@ const DetailsPageIndex = () => {
         <ScrollView style={index.container} showsVerticalScrollIndicator={false}>
             <Image
                 source={detailsPageImage}
-                style={index.postImage}
+                style={index.image}
             />
             <View style={index.detailsBottom}  >
                 <View style={index.detailsWrapper} >

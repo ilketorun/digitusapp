@@ -61,7 +61,7 @@ const Stories = () => {
     },[])
 
     return (
-        <SafeAreaView style={stories.container} >
+        <View style={stories.container} >
             <ScrollView style={{ ...stories.scrollView, width: layout.width}} horizontal={true} showsHorizontalScrollIndicator={false}>
                 {storyData ?
                     storyData.map((item, index)=>{
@@ -75,7 +75,7 @@ const Stories = () => {
                     ) : ''
                 }
             </ScrollView>
-       </SafeAreaView>
+       </View>
     );
 };
 

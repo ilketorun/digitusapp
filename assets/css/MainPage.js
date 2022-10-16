@@ -9,10 +9,14 @@ export const index = StyleSheet.create({
 
 export const stories = StyleSheet.create({
     container: {
-        shadowColor: '#707070', shadowOpacity: 0.3,  shadowOffset: { height: 0 }, shadowRadius: 3
+        shadowColor: '#707070',
+        shadowOpacity: 0.3,
+        shadowOffset: { height: 0 },
+        shadowRadius: 3,
     },
     scrollView: {
         height: 107,
+        width: '100%',
         backgroundColor: 'white',
     },
 });
@@ -21,7 +25,7 @@ export const singleStory = StyleSheet.create({
     container: {
         height: 87,
         width: 53,
-        marginLeft: 12,
+        marginLeft: 13,
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -56,7 +60,7 @@ export const singleStory = StyleSheet.create({
         fontFamily: 'Avenir Next',
         lineHeight: 13,
         color:'#999EB9',
-         width: 50,
+         width: 56,
          height: 34,
          textAlign: 'center',
          marginTop: 5,
@@ -66,7 +70,7 @@ export const singleStory = StyleSheet.create({
 export const singlePost = StyleSheet.create({
     container: {
         margin: '4%',
-        marginTop: '6%',
+        marginTop: '9%',
         marginBottom: '2%',
         width: '92%',
         borderRadius: 10,
@@ -97,7 +101,7 @@ export const singlePost = StyleSheet.create({
         width: '88%',
         height: 26,
         textAlign: 'left',
-        marginTop: '7%',
+        marginTop: '4%',
     },
     postInfoContainer: {
         display: 'flex',
@@ -110,7 +114,7 @@ export const singlePost = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        width: '74%',
+        width: '78%',
         justifyContent: 'flex-start',
     },
     postButtonStyle: {
@@ -130,7 +134,7 @@ export const singlePost = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        width: '14%',
+        width: 50,
     },
     likeIcon: {
         width: 18.22,
@@ -150,8 +154,8 @@ export const singlePost = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        marginLeft: '6%',
-        width: '31%',
+        marginLeft: '8%',
+        width: 85,
     },
     dateIcon: {
         width: 15,
