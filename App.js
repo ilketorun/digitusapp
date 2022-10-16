@@ -28,10 +28,10 @@ function MyStack() {
     const navigation = useNavigation();
 
     const onPressProfileButton = () => {
-        alert('This will be a new page');
+        alert('Opens the Profile Page');
     };
     const onPressSeachIcon = () => {
-        alert('This open a search reaction');
+        alert('Opens the search bar');
     };
     const onPressBackButton = () => {
         navigation.goBack();
