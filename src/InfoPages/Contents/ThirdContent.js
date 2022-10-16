@@ -5,6 +5,7 @@ import ThirdPageImage from '../../../assets/images/InfoPageImages/ThirdPageImage
 import {styles} from '../../../assets/css/InfoPages';
 import CustomButton from '../../Common/CustomButton';
 import { useNavigation } from '@react-navigation/native';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const ThirdContent = React.forwardRef((props, ref) => {
     const layout = useWindowDimensions();
@@ -17,17 +18,21 @@ const ThirdContent = React.forwardRef((props, ref) => {
     };
 
     return (
-        <View style={styles.wrapper}>
-            <Image source={ThirdPageImage} style={{ width: layout.width }}/>
-            <Text style={styles.headerText}>Enim ad minim</Text>
-            <Text style={styles.contentText}>{contextText}</Text>
-            <CustomButton
-                onPress={onButtonPress}
-                text={buttonText}
-                textStyle={styles.buttonTextStyle}
-                buttonStyle={styles.buttonStyle}
-            />
-        </View>
+        <ScrollView style={styles.scrollViewWrapper} showsVerticalScrollIndicator={false}>
+            <View style={styles.wrapper}>
+                <Image source={ThirdPageImage} style={{ width: layout.width }}/>
+                <Text style={styles.headerText}>Enim ad minim</Text>
+                <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+                    <Text style={styles.contentText}>{contextText}</Text>
+                    <CustomButton
+                        onPress={onButtonPress}
+                        text={buttonText}
+                        textStyle={styles.buttonTextStyle}
+                        buttonStyle={styles.buttonStyle}
+                    />
+                </ScrollView>
+            </View>
+        </ScrollView>
     );
 });
 

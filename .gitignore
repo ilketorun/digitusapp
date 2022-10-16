@@ -65,3 +65,4 @@ buck-out/
 
 # Custom
 .vscode
+.vscode/settings.json

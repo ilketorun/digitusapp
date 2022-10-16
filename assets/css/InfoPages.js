@@ -2,18 +2,34 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-    wrapper: {
+    infoPagesWrapper:{
+        flex: 1,
+        backgroundColor: 'white',
+    },
+    logoStyle: {
+        marginTop: 35,
+        width: 149,
+        height: 78,
+        alignSelf: 'center',
+    },
+    scrollViewWrapper: {
         display: 'flex',
         flexDirection: 'column',
+    },
+    wrapper: {
         alignItems: 'center',
     },
     headerText: {
-        marginTop: 30,
+        marginTop: '5%',
         color: '#0A8754',
         fontSize: 22,
         lineHeight: 30,
         fontWeight: 'bold',
         fontFamily: 'Avenir Next',
+    },
+    scrollView: {
+        width: '78%',
+        height: '100%',
     },
     contentText: {
         fontSize: 14,
@@ -22,25 +38,13 @@ export const styles = StyleSheet.create({
         fontWeight: 'normal',
         fontFamily: 'Avenir Next',
         textAlign: 'center',
-        width: 265,
+        width: '100%',
         height: 89,
         overflow: 'hidden',
     },
-    infoPagesWrapper:{
-        flex: 1,
-        backgroundColor: 'white',
-    },
-    textStyle: {
-        marginBottom: 60,
-    },
-    logoStyle: {
-        marginTop: 35,
-        width: 149,
-        height: 78,
-        alignSelf: 'center',
-    },
     buttonStyle: {
-        marginTop: 35,
+        marginTop: '10%',
+        marginBottom: '15%',
         color: 'black',
         backgroundColor: '#64B48E',
         alignSelf: 'center',

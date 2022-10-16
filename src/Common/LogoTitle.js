@@ -7,7 +7,7 @@ import DigitusLogoForNavTitle from '../../assets/images/MainPageImages/DigitusLo
 const LogoTitle = () => {
     return (
         <Image
-            style={{ width: 115, height: 60 }}
+            style={{ width: 115, height: 45 }}
             source={DigitusLogoForNavTitle}
         />
     );
