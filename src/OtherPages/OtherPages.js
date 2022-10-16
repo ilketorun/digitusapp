@@ -9,8 +9,8 @@ const OtherPages = () => {
 
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text>Other Pages!</Text>
-            <Button title='back' onPress={() => navigation.goBack()}></Button>
+            <Text style={{ fontSize: 50 }}>Another Page!</Text>
+            <Button title='Go to Main Page' onPress={() => navigation.goBack()} />
         </View>
     );
 };

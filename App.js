@@ -6,7 +6,6 @@ import InfoPages from './src/InfoPages/InfoPages';
 import MainPageIndex from './src/MainPage/MainPageIndex';
 import DetailsPageIndex from './src/DetailsPage/DetailsPageIndex';
 import CustumNavigationButton from './src/Common/CustomNavButton';
-import { Image, View, Text, Button } from 'react-native';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -15,6 +14,19 @@ import ProfileButton from './assets/images/MainPageImages/RightButton.png';
 import SearchIcon from './assets/images/MainPageImages/searchIcon.png';
 import OtherPages from './src/OtherPages/OtherPages';
 import LogoTitle from './src/Common/LogoTitle';
+import CustomTabBar  from './src/CustomTabBar/CustomTabBar';
+
+import HomeIconPassive from './assets/images/TabBarIcons/home.png';
+import HomeIconActive from './assets/images/TabBarIcons/home_active.png';
+import BookIconActive from './assets/images/TabBarIcons/book-open.png';
+import BookIconPassive from './assets/images/TabBarIcons/book_pasive.png';
+import UsersIconActive from './assets/images/TabBarIcons/users.png';
+import UsersIconPassive from './assets/images/TabBarIcons/users_passive.png';
+import BellIconActive from './assets/images/TabBarIcons/bell.png';
+import BellIconPassive from './assets/images/TabBarIcons/bell_passive.png';
+import MenuIconActive from './assets/images/TabBarIcons/menu.png';
+import MenuIconPassive from './assets/images/TabBarIcons/menu_passive.png';
+
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -46,6 +58,10 @@ function MainTab () {
                 component={MainStack}
                 options={() => ({
                     headerShown: false,
+                    tabBarIcon: ({ focused, color, size }) => {
+                            return (<CustomTabBar focused={focused} icon={!focused ? HomeIconActive : HomeIconPassive} />);
+                    },
+                    tabBarShowLabel: false,
                 })}
             />
             <Tab.Screen
@@ -53,6 +69,43 @@ function MainTab () {
                 component={OtherPages}
                 options={() => ({
                     headerShown: false,
+                    tabBarIcon: ({ focused, color, size }) => {
+                            return (<CustomTabBar focused={focused} icon={!focused ? BookIconActive : BookIconPassive} />);
+                    },
+                    tabBarShowLabel: false,
+                })}
+            />
+            <Tab.Screen
+                name="Settings1"
+                component={OtherPages}
+                options={() => ({
+                    headerShown: false,
+                    tabBarIcon: ({ focused, color, size }) => {
+                            return (<CustomTabBar focused={focused} icon={!focused ? UsersIconActive : UsersIconPassive} />);
+                    },
+                    tabBarShowLabel: false,
+                })}
+            />
+            <Tab.Screen
+                name="Settings2"
+                component={OtherPages}
+                options={() => ({
+                    headerShown: false,
+                    tabBarIcon: ({ focused, color, size }) => {
+                            return (<CustomTabBar focused={focused} icon={!focused ? BellIconActive : BellIconPassive} />);
+                    },
+                    tabBarShowLabel: false,
+                })}
+            />
+            <Tab.Screen
+                name="Settings3"
+                component={OtherPages}
+                options={() => ({
+                    headerShown: false,
+                    tabBarIcon: ({ focused, color, size }) => {
+                            return (<CustomTabBar focused={focused} icon={!focused ? MenuIconActive : MenuIconPassive} />);
+                    },
+                    tabBarShowLabel: false,
                 })}
             />
         </Tab.Navigator>
