@@ -55,7 +55,8 @@ const Posts = () => {
                         let itemUuid = Object.keys(item)[0];
                         return (
                             <SinglePost
-                                imageSource={item[itemUuid].imageSignedUrl} 
+                                key = {itemUuid}
+                                imageSource={item[itemUuid].imageSignedUrl}
                                 title={item[itemUuid].title}
                                 date={item[itemUuid].date}
                                 likeCounter={item[itemUuid].likeCounter}

@@ -6,25 +6,60 @@ import InfoPages from './src/InfoPages/InfoPages';
 import MainPageIndex from './src/MainPage/MainPageIndex';
 import DetailsPageIndex from './src/DetailsPage/DetailsPageIndex';
 import CustumNavigationButton from './src/Common/CustomNavButton';
-import { Image } from 'react-native';
+import { Image, View, Text, Button } from 'react-native';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import BackButton from './assets/images/DetailPageImages/NavBarLeftButton.png';
 import ProfileButton from './assets/images/MainPageImages/RightButton.png';
 import SearchIcon from './assets/images/MainPageImages/searchIcon.png';
+import OtherPages from './src/OtherPages/OtherPages';
+import LogoTitle from './src/Common/LogoTitle';
 
-function LogoTitle() {
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+
+function InfoStack () {
     return (
-        <Image
-            style={{ width: 115, height: 60 }}
-            source={require('./assets/images/MainPageImages/DigitusLogoForNavTitle.png')}
-        />
+        <Stack.Navigator>
+            <Stack.Screen
+                name="InfoPages"
+                component={InfoPages}
+                options={{headerShown: false}}
+            />
+            <Stack.Screen
+                name="AppPages"
+                component={MainTab}
+                options={() => ({
+                    headerShown: false,
+                })}
+            />
+        </Stack.Navigator>
     );
 }
 
-const Stack = createStackNavigator();
+function MainTab () {
+    return (
+        <Tab.Navigator >
+            <Tab.Screen
+                name="Home"
+                component={MainStack}
+                options={() => ({
+                    headerShown: false,
+                })}
+            />
+            <Tab.Screen
+                name="Settings"
+                component={OtherPages}
+                options={() => ({
+                    headerShown: false,
+                })}
+            />
+        </Tab.Navigator>
+    );
+}
 
-function MyStack() {
+function MainStack() {
     const navigation = useNavigation();
 
     const onPressProfileButton = () => {
@@ -34,16 +69,11 @@ function MyStack() {
         alert('Opens the search bar');
     };
     const onPressBackButton = () => {
-        navigation.goBack();
+        navigation.navigate('MainPage');
     };
 
     return (
         <Stack.Navigator>
-            <Stack.Screen
-                name="InfoPages"
-                component={InfoPages}
-                options={{headerShown: false}}
-            />
             <Stack.Screen
                 name="MainPage"
                 component={MainPageIndex}
@@ -70,7 +100,7 @@ function MyStack() {
 export default function App() {
   return (
     <NavigationContainer>
-      <MyStack />
+        <InfoStack />
     </NavigationContainer>
   );
 }

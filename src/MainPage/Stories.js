@@ -56,7 +56,6 @@ const Stories = () => {
             // .then((json) => setStoryData(storiesJSON) /* or do other things*/)
             // .catch((err) => console.log(err) /* or do other things*/ );
             setStoryData(storiesJSON);
-            console.log('storiesJSON',storiesJSON)
         };
         fetchData();
     },[])
@@ -68,7 +67,10 @@ const Stories = () => {
                     storyData.map((item, index)=>{
                         let itemUuid = Object.keys(item)[0];
                         return (
-                            <SingleStory text={item[itemUuid].storyText} imageSource={item[itemUuid].imageSignedUrl}/>
+                            <SingleStory
+                                key = {itemUuid}
+                                text={item[itemUuid].storyText} 
+                                imageSource={item[itemUuid].imageSignedUrl}/>
                         );}
                     ) : ''
                 }
