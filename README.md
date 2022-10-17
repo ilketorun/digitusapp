@@ -23,3 +23,5 @@ This is a React Native project.
 - **CSS styling for all**. : (assets/css/*)
 
 
+<img src="https://github.com/ilketorun/digitusapp/blob/main/gifs/infopages.gif" width="168" height="300" />     <img src="https://github.com/ilketorun/digitusapp/blob/main/gifs/TopTabBar.gif" width="168" height="300" />     <img src="https://github.com/ilketorun/digitusapp/blob/main/gifs/bottomTabBar.gif" width="168" height="300" />     <img src="https://github.com/ilketorun/digitusapp/blob/main/gifs/detailsPage.gif" width="168" height="300" />
+
